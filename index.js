@@ -1,30 +1,30 @@
 import fs from "fs";
-import createTree from './tree.js'
+import createTree from "./tree.js";
 
 /**
  * Исходный объект.
  */
 const obj = {
-    name: 1,
-    items: [
-        {
-            name: 2,
-            items: [{ name: 3 }, { name: 4 }],
-        },
-        {
-            name: 5,
-            items: [{ name: 6 }],
-        },
-    ],
+  name: 1,
+  items: [
+    {
+      name: 2,
+      items: [{ name: 3 }, { name: 4 }],
+    },
+    {
+      name: 5,
+      items: [{ name: 6 }],
+    },
+  ],
 };
 
 /**
  * Обработчик ошибок при создании файла с результатами.
  */
 function errorCallback(err) {
-    if (err) {
-        return console.log(err);
-    }
+  if (err) {
+    return console.log(err);
+  }
 }
 
 /**
