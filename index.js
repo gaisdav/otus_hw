@@ -1,4 +1,5 @@
 import fs from "fs";
+import createTree from './tree.js'
 
 /**
  * Исходный объект.
@@ -18,11 +19,6 @@ const obj = {
 };
 
 /**
- * Шаблон древовидной структуры.
- */
-let template = ``;
-
-/**
  * Обработчик ошибок при создании файла с результатами.
  */
 function errorCallback(err) {
@@ -32,31 +28,16 @@ function errorCallback(err) {
 }
 
 /**
- * Метод для создания древовидной структуры.
+ * Создаем шаблон.
  */
-const showTree = (obj, deepLevel = 0) => {
-    const lines = Array(deepLevel).fill("__").join("");
-    const spaces = Array(deepLevel).fill("  ").join("");
-    const firstLine = !deepLevel ? "" : "\n|";
-
-    template += `${firstLine}${spaces}|${lines}${obj.name}`;
-
-    if (Array.isArray(obj.items)) {
-        obj.items.forEach((item) => {
-            showTree(item, deepLevel + 1);
-        });
-    }
-};
-
-showTree(obj);
+const template = createTree(obj);
 
 /**
  * Выводим результат в консоль.
  */
 console.log(template);
+
 /**
  * Сохраняем результат в файл result.txt.
  */
 fs.writeFile("./result.txt", template, errorCallback);
-
-export default showTree;
