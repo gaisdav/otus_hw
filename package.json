@@ -1,0 +1,12 @@
+{
+  "name": "lesson_1",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "HW for lesson 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
