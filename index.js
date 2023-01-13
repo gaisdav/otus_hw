@@ -38,6 +38,6 @@ const template = createTree(obj);
 console.log(template);
 
 /**
- * Сохраняем результат в файл result.txt.
+ * Сохраняем результат в файл result.txt
  */
 fs.writeFile("./result.txt", template, errorCallback);
