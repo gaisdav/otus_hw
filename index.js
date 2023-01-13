@@ -2,16 +2,17 @@ import fs from "fs";
 import createTree from "./dirTree.js";
 
 const dirPath = process.argv[2];
-const deepValue = Number(process.argv[3]);
+const depthValue = Number(process.env.npm_config_depth);
 
 if (!dirPath) {
-  const errorText = "Укажите путь к директории! Н-р: npm start /Users 3";
+  const errorText =
+    "Укажите путь к директории! Н-р: npm start /Users --depth 4";
   console.error(errorText);
   throw new Error(errorText);
 }
 
-if (!deepValue && deepValue !== 0) {
-  const errorText = "Укажите глубину! Н-р: npm start /Users 3";
+if (!depthValue && depthValue !== 0) {
+  const errorText = "Укажите глубину! Н-р: npm start /Users --depth 4";
   console.error(errorText);
   throw new Error(errorText);
 }
@@ -25,7 +26,7 @@ function errorCallback(err) {
   }
 }
 
-const { template, files, directories } = createTree(dirPath, deepValue);
+const { template, files, directories } = createTree(dirPath, depthValue);
 
 /**
  * Выводим результат в консоль.
