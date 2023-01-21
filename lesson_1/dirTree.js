@@ -28,7 +28,7 @@ const checkPermission = (path) => {
  * @param deep - глубина парсинга
  * @param deepLevel - текущая глубина при парсинге (не указывается при первом вызове)
  */
-const createTree = (dirPath, deep = 2, deepLevel = 0) => {
+const createDirTree = (dirPath, deep = 2, deepLevel = 0) => {
   const dirNameArr = dirPath.split("/");
   const dirName = dirNameArr[dirNameArr.length - 1];
   const lines = Array(deepLevel).fill("__").join("");
@@ -44,7 +44,7 @@ const createTree = (dirPath, deep = 2, deepLevel = 0) => {
     if (items.length && deepLevel < deep) {
       items.forEach((item) => {
         const localPath = dirPath + "/" + item;
-        createTree(localPath, deep, deepLevel + 1);
+        createDirTree(localPath, deep, deepLevel + 1);
         ++directories;
       });
     }
@@ -56,4 +56,4 @@ const createTree = (dirPath, deep = 2, deepLevel = 0) => {
   return { template, directories, files };
 };
 
-export default createTree;
+export default createDirTree;

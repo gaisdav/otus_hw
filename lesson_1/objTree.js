@@ -6,7 +6,7 @@ let template = ``;
 /**
  * Метод для создания древовидной структуры.
  */
-const createTree = (obj, deepLevel = 0) => {
+const createObjTree = (obj, deepLevel = 0) => {
   const lines = Array(deepLevel).fill("__").join("");
   const spaces = Array(deepLevel).fill("  ").join("");
   const firstLine = !deepLevel ? "" : "\n|";
@@ -15,11 +15,11 @@ const createTree = (obj, deepLevel = 0) => {
 
   if (Array.isArray(obj.items)) {
     obj.items.forEach((item) => {
-      createTree(item, deepLevel + 1);
+      createObjTree(item, deepLevel + 1);
     });
   }
 
   return template;
 };
 
-export default createTree;
+export default createObjTree;

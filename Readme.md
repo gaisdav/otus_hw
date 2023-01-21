@@ -1,5 +1,8 @@
 Пример вызова команды:
 
-```npm start [path] --depth [num]```
+```npm run start-obj-tree```
 
-```npm start /Users --depth 4```
+
+```npm run start-dir-tree [path] --depth [num]```
+
+```npm run start-dir-tree /Users --depth 4```
