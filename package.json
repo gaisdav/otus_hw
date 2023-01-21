@@ -1,11 +1,12 @@
 {
-  "name": "lesson_1",
+  "name": "otus",
   "version": "1.0.0",
   "type": "module",
-  "description": "HW for lesson 1",
+  "description": "HW",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start-obj-tree": "node lesson_1/createObjTree.js",
+    "start-dir-tree": "node lesson_1/createDirTree.js"
   },
   "author": "",
   "license": "ISC",
