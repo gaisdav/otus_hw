@@ -4,7 +4,7 @@ import { jest } from '@jest/globals';
 
 let a, b;
 
-describe('object parsing ', () => {
+describe('object parsing result file', () => {
   beforeEach(() => {
     a = jest.spyOn(fs, 'writeFile');
     b = jest.spyOn(console, 'error');
