@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from 'fs';
 
 /**
  * Шаблон древовидной структуры.
@@ -29,11 +29,11 @@ const checkPermission = (path) => {
  * @param deepLevel - текущая глубина при парсинге (не указывается при первом вызове)
  */
 const createDirTree = (dirPath, deep = 2, deepLevel = 0) => {
-  const dirNameArr = dirPath.split("/");
+  const dirNameArr = dirPath.split('/');
   const dirName = dirNameArr[dirNameArr.length - 1];
-  const lines = Array(deepLevel).fill("__").join("");
-  const spaces = Array(deepLevel).fill("  ").join("");
-  const firstLine = !deepLevel ? "" : "\n|";
+  const lines = Array(deepLevel).fill('__').join('');
+  const spaces = Array(deepLevel).fill('  ').join('');
+  const firstLine = !deepLevel ? '' : '\n|';
   const isDirectory = fs.lstatSync(dirPath).isDirectory();
 
   if (checkPermission(dirPath) && isDirectory) {
@@ -43,7 +43,7 @@ const createDirTree = (dirPath, deep = 2, deepLevel = 0) => {
 
     if (items.length && deepLevel < deep) {
       items.forEach((item) => {
-        const localPath = dirPath + "/" + item;
+        const localPath = dirPath + '/' + item;
         createDirTree(localPath, deep, deepLevel + 1);
         ++directories;
       });

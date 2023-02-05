@@ -1,7 +1,7 @@
 import fs from "fs";
 import createDirTree from "./dirTree.js";
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,7 +44,7 @@ console.log("files", files);
  * Сохраняем результат в файл result.txt
  */
 fs.writeFile(
-    __dirname + "/dirTreeResult.txt",
+  __dirname + "/dirTreeResult.txt",
   `${template}
 
 directories: ${directories}

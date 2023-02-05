@@ -6,11 +6,18 @@
   "main": "index.js",
   "scripts": {
     "start-obj-tree": "node lesson_1/createObjTree.js",
-    "start-dir-tree": "node lesson_1/createDirTree.js"
+    "start-dir-tree": "node lesson_1/createDirTree.js",
+    "prettier": "prettier --write .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@types/jest": "^29.2.6",
+    "babel-jest": "^29.3.1",
+    "jest": "^29.3.1",
     "prettier": "2.8.2"
   }
 }
